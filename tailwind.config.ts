@@ -26,6 +26,7 @@ const config = {
           '3': "hsl(var(--bg-3))",
           '4': "hsl(var(--bg-4))",
           '5': "hsl(var(--bg-5))",
+          '6': "var(--bg-6)",
         },
         text: {
           '1': "hsl(var(--text-1))",

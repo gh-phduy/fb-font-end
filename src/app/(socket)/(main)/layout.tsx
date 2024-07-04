@@ -1,8 +1,6 @@
 "use client";
 
-import { useQuery } from "@tanstack/react-query";
 import NavBar from "./_navigation/navigation";
-import { InfinitySpin } from "react-loader-spinner";
 import AuthProvider from "@/components/providers/AuthProvider";
 
 interface layoutProps {

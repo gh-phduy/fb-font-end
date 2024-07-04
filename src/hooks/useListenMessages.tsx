@@ -3,7 +3,6 @@
 import { useContext, useEffect } from "react";
 import useConversation from "../zustand/useConversation";
 import notificationSound from "../assets/sounds/notification.mp3";
-import { MessageType } from "@/components/types";
 import { SocketContext } from "@/components/providers/SocketProvider";
 import { SocketContextType } from "@/components/chat/sidebar/Conversation";
 

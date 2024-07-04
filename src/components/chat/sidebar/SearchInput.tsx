@@ -39,7 +39,7 @@ const SearchInput = () => {
       />
       <button
         type="submit"
-        className="h-10 w-10 rounded-full flex-center bg-sky-500 text-white"
+        className="h-10 min-w-10 rounded-full flex-center bg-sky-500 text-white"
       >
         <IoSearchSharp className="w-6 h-6 outline-none" />
       </button>

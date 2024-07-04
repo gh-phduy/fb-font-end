@@ -29,6 +29,6 @@ const useGetConversations = () => {
       }
     },
   });
-  return { isLoading, conversations };
+  return { conversations, isLoading };
 };
 export default useGetConversations;

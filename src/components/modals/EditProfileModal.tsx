@@ -1,7 +1,6 @@
 "use client";
 
 import { EditProfileForm } from "../forms/EditProfileForm";
-import { Button } from "../ui/button";
 import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
 
 const EditProfileModal = () => {

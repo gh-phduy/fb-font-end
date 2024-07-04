@@ -12,12 +12,6 @@ import useGetUserProfile from "@/hooks/useGetUserProfile";
 import { useQuery } from "@tanstack/react-query";
 import Image from "next/image";
 import { useParams } from "next/navigation";
-import { FaCamera } from "react-icons/fa";
-
-// interface UseFollowReturn {
-//   follow: (userId: string ) => Promise<void>;
-//   isPending: boolean;
-// }
 
 const ProfilePage = () => {
   const param = useParams();
@@ -48,16 +42,7 @@ const ProfilePage = () => {
         <div className="absolute  avt-layout-profile h-[168px] w-[168px]">
           <Avatar className="absolute h-[168px] w-[168px]">
             <AvatarImage src={user?.profileImg} />
-            <AvatarFallback>
-              <Image
-                src="/avatar-placeholder.png"
-                fill={true}
-                className="object-cover"
-                quality={100}
-                priority
-                alt="Avatar placeholder"
-              />
-            </AvatarFallback>
+            <AvatarFallback className="bg-bg-6" />
           </Avatar>
           {isMyProfile && <UpdateIMG feedType="ProfileIMG" />}
         </div>
@@ -94,39 +79,6 @@ const ProfilePage = () => {
           userId={user?._id}
         />
       </div>
-      {/* <div className="-translate-y-[80px]">
-        <Avatar className="h-[168px] w-[168px]">
-          <AvatarImage src="meta.png" />
-          <AvatarFallback />
-        </Avatar>
-        <div className="flex-center mt-1 space-y-3 flex-col">
-          <span className="text-[32px] font-bold">Thi Nuong</span>
-          <Button>Add friend</Button>
-        </div>
-      </div> */}
-
-      {/* <div className="bg-sky-400 flex-between w-full max-w-[1020px]">
-        <div className="flex">
-          <Avatar className="-translate-y-[80px] h-[168px] w-[168px]">
-            <AvatarImage src="meta.png" />
-            <AvatarFallback />
-          </Avatar>
-          <span className="text-[32px] font-bold">Thi Nuong</span>
-        </div>
-
-        <Button>Add friend</Button>
-      </div> */}
-
-      {/* <div className="relative w-[78.125rem] h-[28.75rem]">
-        <Image
-          src="/bg.jpg" 
-          alt="avt"
-          fill={true}
-          quality={100}
-          priority
-          className="object-cover"
-        />
-      </div> */}
     </div>
   );
 };

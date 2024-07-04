@@ -1,9 +1,6 @@
 "use client";
 
-import {
-  SocketContext,
-  // useSocketContext,
-} from "@/components/providers/SocketProvider";
+import { SocketContext } from "@/components/providers/SocketProvider";
 import { UserType } from "@/components/types";
 import useConversation from "@/zustand/useConversation";
 import React, { useContext } from "react";

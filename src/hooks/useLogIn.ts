@@ -39,11 +39,6 @@ const useLogIn = () => {
         onSuccess: (data) => {
           console.log("data useLogin Success: ", data)
            queryClient.invalidateQueries({ queryKey: ["authUser"] });
-          
-          // refetch the authUser
-         
-          // router.replace('/')
-          // setAuthUserGlobal()
         },
       });
     return { loginMutation, isError, error, isPending }

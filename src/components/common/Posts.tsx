@@ -39,8 +39,8 @@ const Posts: React.FC<PostsProps> = ({ feedType, username, userId }) => {
   }, [feedType, username, refetch]);
   return (
     <>
-      {/* {(isLoading || isRefetching) && (
-        <div className="flex flex-col justify-center">
+      {(isLoading || isRefetching) && (
+        <div className="flex flex-col space-y-5 justify-center">
           <PostSkeleton />
           <PostSkeleton />
           <PostSkeleton />
@@ -55,12 +55,7 @@ const Posts: React.FC<PostsProps> = ({ feedType, username, userId }) => {
             <Post key={post._id} post={post} />
           ))}
         </>
-      )} */}
-      <div className="flex flex-col space-y-5 justify-center">
-        <PostSkeleton />
-        <PostSkeleton />
-        <PostSkeleton />
-      </div>
+      )}
     </>
   );
 };

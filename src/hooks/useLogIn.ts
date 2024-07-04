@@ -30,15 +30,20 @@ const useLogIn = () => {
             if (!res.ok) {
               throw new Error(data.error || "Something went wrong");
             }
+            return data
           } catch (error) {
             console.error(error);
             throw error;
           }
         },
-        onSuccess: () => {
+        onSuccess: (data) => {
+          console.log("data useLogin Success: ", data)
+           queryClient.invalidateQueries({ queryKey: ["authUser"] });
+          
           // refetch the authUser
-          queryClient.invalidateQueries({ queryKey: ["authUser"] });
-          router.replace('/')
+         
+          // router.replace('/')
+          // setAuthUserGlobal()
         },
       });
     return { loginMutation, isError, error, isPending }

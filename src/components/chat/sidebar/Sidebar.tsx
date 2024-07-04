@@ -5,7 +5,7 @@ import SearchInput from "./SearchInput";
 
 const Sidebar = () => {
   return (
-    <div>
+    <div className="overflow-y-auto">
       <SearchInput />
       <Conversations />
     </div>

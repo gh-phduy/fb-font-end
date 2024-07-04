@@ -5,8 +5,8 @@ import Link from "next/link";
 
 const SignUpPage = () => {
   return (
-    <div className=" -translate-y-12  min-w-[600px] h-screen flex flex-col justify-center items-center 900:flex-row ">
-      <div className="w-[500px] 900:block flex flex-col items-center">
+    <div className=" -translate-y-12 h-screen flex flex-col justify-center items-center 900:flex-row ">
+      <div className="max-w-[500px] w-full 900:block flex flex-col items-center">
         <div>
           <Image
             className="900:-translate-x-[10%] w-[326px] h-[106px]"
@@ -16,7 +16,7 @@ const SignUpPage = () => {
             height={100}
           />
         </div>
-        <h2 className="text-[#1c1e21] text-center 900:text-start text-[28px] font-medium">
+        <h2 className="text-[#1c1e21] text-center 900:text-start text-[5vw] 600:text-[28px] font-medium">
           Facebook helps you connect and share with the people in your life.
         </h2>
       </div>

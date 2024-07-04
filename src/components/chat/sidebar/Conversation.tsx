@@ -1,7 +1,12 @@
-import { useSocketContext } from "@/components/providers/SocketProvider";
+"use client";
+
+import {
+  SocketContext,
+  // useSocketContext,
+} from "@/components/providers/SocketProvider";
 import { UserType } from "@/components/types";
 import useConversation from "@/zustand/useConversation";
-import React from "react";
+import React, { useContext } from "react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Image from "next/image";
 import { Socket } from "socket.io-client";
@@ -11,7 +16,7 @@ interface ConversationProps {
   lastIdx: boolean;
 }
 
-interface SocketContextType {
+export interface SocketContextType {
   socket: Socket | null;
   onlineUsers: string[];
 }
@@ -22,7 +27,7 @@ const Conversation: React.FC<ConversationProps> = ({
   const { selectedConversation, setSelectedConversation } = useConversation();
 
   const isSelected = selectedConversation?._id === conversation._id;
-  const { onlineUsers } = useSocketContext() as SocketContextType;
+  const { onlineUsers } = useContext(SocketContext) as SocketContextType;
   const isOnline = onlineUsers.includes(conversation._id as string);
 
   return (
@@ -50,8 +55,7 @@ const Conversation: React.FC<ConversationProps> = ({
 
         <div className="flex flex-col flex-1">
           <div className="flex gap-3 justify-between">
-            <p className="font-bold text-gray-200">{conversation.fullName}</p>
-            <span className="text-xl">Emoji</span>
+            <p className="font-bold text-text-1">{conversation.fullName}</p>
           </div>
         </div>
       </div>

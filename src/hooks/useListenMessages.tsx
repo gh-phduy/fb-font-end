@@ -1,13 +1,14 @@
 "use client";
 
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import useConversation from "../zustand/useConversation";
 import notificationSound from "../assets/sounds/notification.mp3";
-import { useSocketContext } from "@/components/providers/SocketProvider";
 import { MessageType } from "@/components/types";
+import { SocketContext } from "@/components/providers/SocketProvider";
+import { SocketContextType } from "@/components/chat/sidebar/Conversation";
 
 const useListenMessages = () => {
-  const { socket } = useSocketContext() || {};
+  const { socket } = useContext(SocketContext) as SocketContextType;
   const { messages, setMessages } = useConversation();
 
   useEffect(() => {

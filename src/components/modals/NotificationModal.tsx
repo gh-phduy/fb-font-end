@@ -5,19 +5,13 @@ import useGetNotification from "@/hooks/useGetNotification";
 import { FaBell } from "react-icons/fa";
 import { NotificationType } from "../types";
 import AvatarUser from "../common/AvaterUser";
-import useGetNotificationToRead from "@/hooks/useNotificationsToRead";
 import { useQueryClient } from "@tanstack/react-query";
 
 interface NotificationModalProps {}
 
 const NotificationModal: React.FC<NotificationModalProps> = ({}) => {
-  const queryClient = useQueryClient();
-
   const { notifications, isLoading, error } = useGetNotification();
-  if (!error) {
-    queryClient.invalidateQueries({ queryKey: ["notificationsToRead"] });
-  }
-  const { notificationsToRead, isLoadingToRead } = useGetNotificationToRead();
+
   return (
     <Dialog modal={false}>
       <DialogTrigger asChild>
@@ -25,16 +19,6 @@ const NotificationModal: React.FC<NotificationModalProps> = ({}) => {
           <div className=" h-10 cursor-pointer w-10 bg-bg-4 text-text-1 rounded-full overflow-hidden flex-center">
             <FaBell size={22} />
           </div>
-          {/* {notificationsToRead.map((notification: NotificationType) => {
-            if (notification.read) {
-              return (
-                <>
-                  <span className="absolute animate-ping top-0 right-0 h-2.5 w-2.5 bg-red-500 rounded-full"></span>
-                  <span className="absolute top-0 right-0 h-2.5 w-2.5 bg-red-500 rounded-full"></span>
-                </>
-              );
-            }
-          })} */}
         </div>
       </DialogTrigger>
       <DialogContent className="p-3.5 shadow-lg rounded-lg z-50 top-14 overflow-y-scroll h-[500px] right-3 400:w-[440px] w-[18rem] bg-bg-2">

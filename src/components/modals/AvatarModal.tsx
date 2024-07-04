@@ -4,7 +4,6 @@ import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { Button } from "../ui/button";
 import useLogout from "@/hooks/useLogout";
 import AvatarUser from "../common/AvaterUser";
-import { FaChevronRight } from "react-icons/fa";
 import { RiLogoutBoxRFill } from "react-icons/ri";
 import AvtModalButton from "../AvtModalButton";
 import DisplayAccessModal from "./DisplayAccessModal";

@@ -8,6 +8,7 @@ import { ThemeProvider } from "@/components/providers/theme-provider";
 import QueryProvider from "@/components/providers/query-provider";
 import { Toaster } from "react-hot-toast";
 import { SocketContextProvider } from "@/components/providers/SocketProvider";
+import AuthProvider from "@/components/providers/AuthProvider";
 
 const mainFont = localFont({
   src: "../fonts/segoe-ui-historic.ttf",
@@ -38,10 +39,12 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <QueryProvider>
+            {/* <AuthProvider> */}
             <SocketContextProvider>
               {children}
               <Toaster />
             </SocketContextProvider>
+            {/* </AuthProvider> */}
           </QueryProvider>
         </ThemeProvider>
       </body>

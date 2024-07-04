@@ -31,7 +31,10 @@ const config = {
           '1': "hsl(var(--text-1))",
           '2': "hsl(var(--text-2))",
         },
-        line: "hsl(var(--line))",
+        line: {
+          '': "hsl(var(--line))",
+          '1': "hsl(var(--line-1))",
+        },
         main: "hsl(var(--main))",
 
         // Default of Shadcn/ui
@@ -79,7 +82,9 @@ const config = {
         '320': '320px',
         '380': '380px',
         '400': '400px',
+        '430': '430px',
         '432': '432px',
+        '600': '600px',
         '700': '700px',
         '800': '800px',
         '900': '900px',

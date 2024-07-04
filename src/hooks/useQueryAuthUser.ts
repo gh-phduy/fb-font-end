@@ -3,7 +3,7 @@
 import { useQuery } from "@tanstack/react-query";
 
 const useQueryAuthUser = () => {
-  const { data: authUser, isLoading } = useQuery({
+  const { data: authUser, isLoading, isSuccess, isError } = useQuery({
     queryKey: ["authUser"],
     queryFn: async () => {
       try {
@@ -23,7 +23,7 @@ const useQueryAuthUser = () => {
       }
     },
   });
-  return { authUser, isLoading };
+  return { authUser, isLoading, isSuccess, isError };
 };
 
 export default useQueryAuthUser;

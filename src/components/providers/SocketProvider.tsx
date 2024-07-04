@@ -1,5 +1,6 @@
 "use client";
 
+import useQueryAuthUser from "@/hooks/useQueryAuthUser";
 import {
   SetStateAction,
   createContext,
@@ -8,18 +9,17 @@ import {
   useState,
 } from "react";
 import io, { Socket } from "socket.io-client";
-import useQueryAuthUser from "@/hooks/useQueryAuthUser";
 
 interface SocketContextType {
   socket: Socket | null;
   onlineUsers: string[];
 }
 
-const SocketContext = createContext<SocketContextType | null>(null);
+export const SocketContext = createContext<SocketContextType | null>(null);
 
-export const useSocketContext = () => {
-  return useContext(SocketContext);
-};
+// export const useSocketContext = () => {
+//   return useContext(SocketContext);
+// };
 
 interface SocketContextProviderProps {
   children: React.ReactNode;
@@ -32,6 +32,7 @@ export const SocketContextProvider: React.FC<SocketContextProviderProps> = ({
   const [onlineUsers, setOnlineUsers] = useState<string[]>([]);
 
   const { authUser } = useQueryAuthUser();
+
   useEffect(() => {
     if (authUser) {
       const socket = io(`${process.env.NEXT_PUBLIC_HOSTNAME}`, {

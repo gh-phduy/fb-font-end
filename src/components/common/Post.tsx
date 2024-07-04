@@ -73,18 +73,6 @@ const Post: React.FC<PostProps> = ({ post }) => {
               <FaTrash size={20} />
             </Button>
           )}
-          {/* {isMyPost && (
-            <span className="flex-center flex-1">
-              {!isDeleting && (
-                <FaTrash
-                  className="cursor-pointer hover:bg-bg-4 h-4 w-4 hover:rounded-full flex-center hover:text-red-500"
-                  onClick={handleDeletePost}
-                />
-              )}
-
-              {isDeleting && <span>...</span>}
-            </span>
-          )} */}
         </div>
       </div>
       <div className="px-2 pb-1 font-medium text-text-2">
@@ -97,12 +85,20 @@ const Post: React.FC<PostProps> = ({ post }) => {
           fill={true}
           priority
           className="object-cover"
-          // sizes="(max-width: 768px) 590x, 500px"
         />
       </div>
       <div className="w-full my-3 px-4 flex-between">
-        <div className="flex space-x-2">
-          <Image src="/emoji-like.png" width={18} height={18} alt="like icon" />
+        <div className="flex-center space-x-2">
+          <div className="relative h-[18px] w-[18px]">
+            <Image
+              src="/emoji-like.png"
+              priority
+              fill
+              className="object-cover"
+              alt="like icon"
+            />
+          </div>
+
           <span className="text-[15px] text-text-2 font-normal">
             {post.likes.length}
           </span>
@@ -116,7 +112,7 @@ const Post: React.FC<PostProps> = ({ post }) => {
         </div>
       </div>
       <div className="w-full h-[5px] flex-center px-4">
-        <div className="w-full h-[0.5px] bg-white"></div>
+        <div className="w-full h-[0.5px] bg-line-1"></div>
       </div>
 
       <div className="bg-bg-2 rounded-lg p-1.5 flex-center">
@@ -127,16 +123,18 @@ const Post: React.FC<PostProps> = ({ post }) => {
               isLiked ? "text-main" : "text-text-2"
             )}
           >
-            {isLiking && (
-              <span className="loading loading-spinner loading-xs"></span>
+            {isLiking ? (
+              <span className="loading loading-infinity loading-lg"></span>
+            ) : (
+              <>
+                {isLiked && !isLiking ? (
+                  <AiFillLike size={26} />
+                ) : (
+                  <AiOutlineLike size={26} />
+                )}
+              </>
             )}
-            <>
-              {isLiked && !isLiking ? (
-                <AiFillLike size={26} />
-              ) : (
-                <AiOutlineLike size={26} />
-              )}
-            </>
+
             <div>Like</div>
           </div>
         </Button>

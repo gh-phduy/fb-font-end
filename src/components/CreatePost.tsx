@@ -11,6 +11,7 @@ import PostForm from "./forms/PostForm";
 import AvatarUser from "./common/AvaterUser";
 import { useQuery } from "@tanstack/react-query";
 import { UserType } from "./types";
+import useQueryAuthUser from "@/hooks/useQueryAuthUser";
 
 const navLinks = [
   {
@@ -22,6 +23,7 @@ const navLinks = [
     name: "Photo/video",
     icon: <IoMdPhotos className="text-[#45bd62]" size={26} />,
     single: false,
+    modal: true,
   },
   {
     name: "Feeling/activity",
@@ -42,7 +44,7 @@ const CreatePost = () => {
           <DialogTrigger asChild>
             <Button variant="create_post_trigger" size="create_post_trigger">
               <span className="select-none text-[17px] text-text-2">
-                What&apos;s on your mind, Name?
+                What&apos;s on your mind, {authUser?.fullName.split(" ").pop()}?
               </span>
             </Button>
           </DialogTrigger>
@@ -56,22 +58,49 @@ const CreatePost = () => {
         className="bg-bg-4 mt-3 mb-2 h-[1.2px]"
       />
       <div className="flex">
-        {navLinks.map((item) => (
-          <Button
-            key={item.name}
-            className={cn(
-              item.single ? "432:flex-center hidden" : "flex-center",
-              "select-none"
-            )}
-            variant="create_post_subtrigger"
-            size="create_post_subtrigger"
-          >
-            {item.icon}
-            <span className="font-semibold text-text-2 text-[0.938rem]">
-              {item.name}
-            </span>
-          </Button>
-        ))}
+        {navLinks.map((item) => {
+          if (item.modal) {
+            return (
+              <Dialog key={item.name}>
+                <DialogTrigger asChild>
+                  <Button
+                    className={cn(
+                      item.single ? "432:flex-center hidden" : "flex-center",
+                      "select-none"
+                    )}
+                    variant="create_post_subtrigger"
+                    size="create_post_subtrigger"
+                  >
+                    {item.icon}
+                    <span className="font-semibold text-text-2 text-[0.938rem]">
+                      {item.name}
+                    </span>
+                  </Button>
+                </DialogTrigger>
+                <DialogContent className="shadow-lg rounded-lg z-50 top-[50%] left-[50%] -translate-y-1/2 -translate-x-1/2 700:w-[500px] w-full bg-bg-2">
+                  <PostForm />
+                </DialogContent>
+              </Dialog>
+            );
+          } else {
+            return (
+              <Button
+                key={item.name}
+                className={cn(
+                  item.single ? "432:flex-center hidden" : "flex-center",
+                  "select-none"
+                )}
+                variant="create_post_subtrigger"
+                size="create_post_subtrigger"
+              >
+                {item.icon}
+                <span className="font-semibold text-text-2 text-[0.938rem]">
+                  {item.name}
+                </span>
+              </Button>
+            );
+          }
+        })}
       </div>
     </div>
   );

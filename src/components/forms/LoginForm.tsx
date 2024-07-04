@@ -57,7 +57,7 @@ export function LoginForm() {
           render={({ field }) => (
             <FormItem>
               <FormControl>
-                <Input type="username" placeholder="Username" {...field} />
+                <Input type="text" placeholder="Username" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

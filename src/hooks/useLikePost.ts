@@ -37,7 +37,6 @@ const useLikePost = (post: PostType) => {
               return p;
             });
           });
-        queryClient.invalidateQueries({ queryKey: ["notificationsToRead"] });
 
         },
         onError: (error) => {

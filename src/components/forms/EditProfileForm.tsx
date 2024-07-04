@@ -131,7 +131,7 @@ export function EditProfileForm() {
                 <FormControl>
                   <Input
                     type="password"
-                    className="flex-1 input border border-gray-700 rounded p-3 input-md"
+                    className="flex-1 w-full input border border-gray-700 rounded p-3 input-md"
                     placeholder="Current Password"
                     {...field}
                   />

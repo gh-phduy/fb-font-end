@@ -7,7 +7,7 @@ import { UserType } from "@/components/types";
 const Conversations = () => {
   const { isLoading, conversations } = useGetConversations();
   return (
-    <div className="py-2 flex flex-col overflow-auto">
+    <div className="py-2 flex flex-col overflow-y-auto">
       {conversations?.map((conversation: UserType, idx: number) => (
         <Conversation
           key={conversation._id}

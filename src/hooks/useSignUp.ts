@@ -2,10 +2,12 @@
 
 import { SignUpProps } from "@/components/types";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
 
 const useSignUp = () => {
   const queryClient = useQueryClient();
+    const router = useRouter()
 
     const { mutate, isError, isPending, error } = useMutation({
         mutationFn: async ({
@@ -38,10 +40,8 @@ const useSignUp = () => {
         },
         onSuccess: () => {
           toast.success("Account created successfully");
-    
-          {
-            /* Added this line below, after recording the video. I forgot to add this while recording, sorry, thx. */
-          }
+          queryClient.invalidateQueries({ queryKey: ["authUser"] });
+          router.replace('/')
         },
       });
     return {mutate, isError, error, isPending}

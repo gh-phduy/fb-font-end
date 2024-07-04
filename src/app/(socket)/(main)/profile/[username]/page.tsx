@@ -29,14 +29,14 @@ const ProfilePage = () => {
   return (
     <div className="top-14 absolute bg-bg-1 min-w-[20rem] w-full flex-center flex-col">
       <div className="relative w-screen bg-bg-6 h-[calc(100vw/2.7)] min-w-[320px] 1100:max-w-[1100px] 1100:max-h-[406px]">
-        {/* <Image
+        <Image
           src={user?.coverImg || "/cover-placeholder.webp"}
           alt="avtCover"
           fill={true}
           quality={100}
           priority
           className="object-cover"
-        /> */}
+        />
         {isMyProfile && <UpdateIMG feedType="CoverIMG" />}
 
         <div className="absolute  avt-layout-profile h-[168px] w-[168px]">

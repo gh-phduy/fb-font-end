@@ -37,11 +37,11 @@ const useLogout = () => {
     },
   });
 
-  useEffect(() => {
-    if (isSuccess) {
-      router.replace("/");
-    }
-  }, [isSuccess, router]); // Chú ý thêm isSuccess vào dependency array
+  // useEffect(() => {
+  //   if (isSuccess) {
+  //     router.replace("/");
+  //   }
+  // }, [isSuccess, router]); // Chú ý thêm isSuccess vào dependency array
 
   return { logout };
 };

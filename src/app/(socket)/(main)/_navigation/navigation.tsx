@@ -1,7 +1,6 @@
 import NavLeft from "./nav-left";
 import NavRight from "./nav-right";
 import NavCenter from "./nav-center";
-// import NotifyModal from "@/components/modals/NotifyModal";
 
 const NavBar = () => {
   return (
@@ -9,7 +8,6 @@ const NavBar = () => {
       <NavLeft />
       <NavCenter />
       <NavRight />
-      {/* <NotifyModal /> */}
     </div>
   );
 };

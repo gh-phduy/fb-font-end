@@ -55,8 +55,10 @@ const ProfilePage = () => {
           </Avatar>
           {isMyProfile && <UpdateIMG feedType="ProfileIMG" />}
         </div>
-        <div className="name-layout-profile w-fit flex flex-col absolute">
-          <span className="text-[32px] font-bold">{user?.fullName}</span>
+        <div className="name-layout-profile text-text-1 w-fit flex flex-col absolute">
+          <span className="text-[32px] text-text-1 font-bold">
+            {user?.fullName}
+          </span>
           <div className="flex space-x-3">
             <span className="text-[15px] font-semibold text-text-2">
               {user?.following.length + " " + "following"}

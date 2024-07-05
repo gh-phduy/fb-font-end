@@ -78,15 +78,17 @@ const Post: React.FC<PostProps> = ({ post }) => {
       <div className="px-2 pb-1 font-medium text-text-2">
         <span>{post.text}</span>
       </div>
-      <div className="relative h-[550px] w-full">
-        <Image
-          src={post.img || ""}
-          alt="avt"
-          fill={true}
-          priority
-          className="object-cover"
-        />
-      </div>
+      {post.img && (
+        <div className="relative h-[550px] w-full">
+          <Image
+            src={post.img || ""}
+            alt="avt"
+            fill={true}
+            priority
+            className="object-cover"
+          />
+        </div>
+      )}
       <div className="w-full my-3 px-4 flex-between">
         <div className="flex-center space-x-2">
           <div className="relative h-[18px] w-[18px]">

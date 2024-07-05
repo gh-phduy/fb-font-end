@@ -83,7 +83,7 @@ const ProfilePage = () => {
           </Button>
         )}
       </div>
-      <div className="w-full mt-8 flex-center">
+      <div className="w-full mt-8 flex flex-col space-y-4 justify-center items-center">
         <Posts
           feedType="posts"
           username={param.username as string}

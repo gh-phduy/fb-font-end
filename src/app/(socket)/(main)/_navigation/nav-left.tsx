@@ -18,7 +18,7 @@ const NavLeft = () => {
           placeholder="Search Facebook"
         />
       </div>
-      <div className="1250:hidden w-10 h-10 flex-center bg-bg-4 rounded-full">
+      <div className="1250:hidden w-10 h-10 text-text-1 flex-center bg-bg-4 rounded-full">
         <FaMagnifyingGlass size={17} />
       </div>
     </div>

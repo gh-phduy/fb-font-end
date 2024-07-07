@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { HiDotsHorizontal } from "react-icons/hi";
 import { AiOutlineLike } from "react-icons/ai";
 import { PiShareFat } from "react-icons/pi";
@@ -16,6 +15,7 @@ import AvatarUser from "./AvaterUser";
 import useLikePost from "@/hooks/useLikePost";
 import useDeletePost from "@/hooks/useDeletePost";
 import { useQuery } from "@tanstack/react-query";
+import Image from "next/image";
 
 interface PostProps {
   post: PostType;
@@ -92,13 +92,7 @@ const Post: React.FC<PostProps> = ({ post }) => {
       <div className="w-full my-3 px-4 flex-between">
         <div className="flex-center space-x-2">
           <div className="relative h-[18px] w-[18px]">
-            <Image
-              src="/emoji-like.png"
-              priority
-              fill
-              className="object-cover"
-              alt="like icon"
-            />
+            <img src="/emoji-like.png" className="object-cover" />
           </div>
 
           <span className="text-[15px] text-text-2 font-normal">

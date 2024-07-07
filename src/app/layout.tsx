@@ -20,7 +20,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  redirect("https://fb-font-end.vercel.app/");
   return (
     <html suppressHydrationWarning lang="en">
       <body

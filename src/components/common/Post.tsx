@@ -92,7 +92,7 @@ const Post: React.FC<PostProps> = ({ post }) => {
       <div className="w-full my-3 px-4 flex-between">
         <div className="flex-center space-x-2">
           <Image
-            src="/emoji-like.png" // Đảm bảo hình ảnh đã được resize xuống 18x18px
+            src="/emoji-like.png"
             alt="Icon thể hiện cảm xúc thích"
             width={18}
             height={18}

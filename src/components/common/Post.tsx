@@ -91,9 +91,12 @@ const Post: React.FC<PostProps> = ({ post }) => {
       )}
       <div className="w-full my-3 px-4 flex-between">
         <div className="flex-center space-x-2">
-          <div className="relative h-[18px] w-[18px]">
-            <img src="/emoji-like.png" className="object-cover" />
-          </div>
+          <Image
+            src="/emoji-like.png" // Đảm bảo hình ảnh đã được resize xuống 18x18px
+            alt="Icon thể hiện cảm xúc thích"
+            width={18}
+            height={18}
+          />
 
           <span className="text-[15px] text-text-2 font-normal">
             {post.likes.length}

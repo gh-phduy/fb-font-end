@@ -30,14 +30,6 @@ const AvatarModal = () => {
             <RiLogoutBoxRFill size={18} />
           </AvtModalButton>
         </Button>
-        {/* <Button
-          onClick={(e) => {
-            e.preventDefault();
-            logout();
-          }}
-        >
-          Logout
-        </Button> */}
       </DialogContent>
     </Dialog>
   );

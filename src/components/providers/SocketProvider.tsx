@@ -36,7 +36,6 @@ export const SocketContextProvider: React.FC<SocketContextProviderProps> = ({
   useEffect(() => {
     if (authUser) {
       const socket = io(`${process.env.NEXT_PUBLIC_HOSTNAME}`, {
-        path: "/ws/",
         query: {
           userId: authUser._id,
         },
